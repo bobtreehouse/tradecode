@@ -1,0 +1,16 @@
+input priceType = PriceType.LAST;
+plot LastPrice = close(priceType = priceType);
+input SMA1length=10;
+input SMA2length=20;
+def SMA1=reference SimpleMovingAvg(length=SMA1length);
+def SMA2=reference SimpleMovingAvg(length=SMA2length);
+def RSI4=reference RSI(length=10);
+def ADX4=reference ADX(length=10);
+def MACD=reference MACD;
+def APTR=reference APTR(length=14);
+def CCI=reference CCI(length=10);
+def VRC=reference VolumeRateOfChange (length=10);
+def VOSC=reference VolumeOsc ;
+def Buy = LastPrice > SMA1 and SMA1 > SMA2 and CCI crosses above -100 within 15 bars and MACD crosses above 0 within 10 bars and VOSC > 0;
+AddLabel (yes, if LastPrice > SMA1 and SMA1 > SMA2 and CCI crosses above -100 within 15 bars and MACD crosses above 0 within 10 bars and VOSC > 0 then "Buy"  else "Hold", color = Color.LIGHT_GREEN); 
+assignBackgroundColor(if Buy then Color.DARK_GREEN else Color.GRAY);  
