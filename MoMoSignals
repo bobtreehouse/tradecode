@@ -11,6 +11,6 @@ def APTR=reference APTR(length=14);
 def CCI=reference CCI(length=10);
 def VRC=reference VolumeRateOfChange (length=10);
 def VOSC=reference VolumeOsc ;
-def Buy = LastPrice > SMA1 and SMA1 > SMA2 and CCI crosses above -100 within 15 bars and MACD crosses above 0 within 10 bars and VOSC > 0;
-AddLabel (yes, if LastPrice > SMA1 and SMA1 > SMA2 and CCI crosses above -100 within 15 bars and MACD crosses above 0 within 10 bars and VOSC > 0 then "Buy"  else "Hold", color = Color.LIGHT_GREEN); 
+def Buy = LastPrice > SMA1 and SMA1 > SMA2 and XXX ........ > 0;
+AddLabel (yes, if LastPrice > SMA1 and SMA1 > SMA2 and and XXX ........ >..... > 0 then "Buy"  else "Hold", color = Color.LIGHT_GREEN); 
 assignBackgroundColor(if Buy then Color.DARK_GREEN else Color.GRAY);  
